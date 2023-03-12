@@ -1,13 +1,19 @@
+var modalContainer = document.getElementById('signup-modal');
+var modalBackground = document.getElementById('modal-background');
+var showSignup = document.getElementById('show-signup-modal');
+var createUserBtn = document.getElementById('create-user')
+var closeFavorites = document.getElementById('close-favorites');
+
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
-  const email = document.querySelector('#email-login').value.trim();
+  const username = document.querySelector('#username-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
-  if (email && password) {
+  if (username && password) {
     const response = await fetch('/api/users/login', {
       method: 'POST',
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -23,13 +29,12 @@ const signupFormHandler = async (event) => {
   event.preventDefault();
 
   const username = document.querySelector('#username-signup').value.trim();
-  const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
-  if (username && email && password) {
+  if (username && username && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ username, email, password }),
+      body: JSON.stringify({ username, username, password }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -41,10 +46,28 @@ const signupFormHandler = async (event) => {
   }
 };
 
+// Show signup modal form on button click
+showSignup.addEventListener('click', function (e) {
+  e.preventDefault();
+  modalContainer.classList.add('is-active');
+})
+
+// Close signup modal form on button click
+closeFavorites.addEventListener('click', function (e) {
+  e.preventDefault();
+  modalContainer.classList.remove('is-active');
+})
+
+// Close signup modal form on modal background click
+modalBackground.addEventListener('click', function (e) {
+  e.preventDefault();
+  modalContainer.classList.remove('is-active');
+})
+
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
 
 document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
+  .getElementById('create-user')
+  .addEventListener('click', signupFormHandler);

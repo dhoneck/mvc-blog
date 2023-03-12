@@ -4,25 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APP</title>
+  <link rel="stylesheet" href="https://kit.fontawesome.com/f46accb316.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <title>MVC Blog</title>
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      APP
-    </h1>
+  <header class="display-flex justify-space-between align-center p-2 has-text-centered has-text-white has-background-info-dark">
+    <h1 class="is-size-3">MVC Blog</h1>
+    <h2 class="is-size-4">A tech blog that utilizes the MVC framework</h2>
     {{#if loggedIn}}
     <nav>
-      <button class="btn" id="logout">logout</button>
+      <button class="btn" id="logout">Logout</button>
     </nav>
     {{/if}}
   </header>
+
   <main class="container container-fluid mt-5">
     {{{ body }}}
   </main>
-  <footer>
-      
+
+  <footer>   
   </footer>
 
   {{#if loggedIn}}
