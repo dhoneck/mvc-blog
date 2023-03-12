@@ -19,18 +19,18 @@ Comment.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    dateCreated: {
-      type: DataTypes.DATE,
+    date_created: {
+      type: DataTypes.DATEONLY,
       allowNull: false,
       defaultValue: sequelize.NOW
     },
-    userId: {
+    user_id: {
       type: DataTypes.INTEGER,
       refrences: {
         model: User,
       }
     },
-    postId: {
+    post_id: {
       type: DataTypes.INTEGER,
       refrences: {
         model: Post,

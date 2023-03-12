@@ -17,9 +17,7 @@ router.post('/', async (req, res) => {
 router.get('/', async (req, res) => {
   console.log('GET all posts');
   try {
-    const posts = await Post.findAll({
-      include: [{ model: Comment }],
-    });
+    const posts = await Post.findAll();
     res.status(200).json(posts);
   } catch (err) {
     res.status(500).json(err);
@@ -30,9 +28,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   console.log('GET single post');
   try {
-    const post = await Post.findByPk(req.params.id, {
-      include: [{ model: Comment }],
-    });
+    const post = await Post.findByPk();
     if (!post) {
       res.status(404).json({ message: 'No post found with that id!' });
       return
@@ -77,6 +73,5 @@ router.delete('/:id', async (req, res) => {
     res.status(500).json(err)
   }
 }); 
-
 
 module.exports = router;
