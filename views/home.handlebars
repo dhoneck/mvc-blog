@@ -1,1 +1,11 @@
-I AM HOME!
+  <h2></h2>
+  {{#if posts}}
+  {{#each posts}}
+  <div class="post-container">
+    <div class="post-header">{{this.dataValues.title}} <span>Created on {{this.dataValues.date_created}}</span></div>
+    <div class="post-body">{{this.dataValues.content}}</div>
+  </div>
+  {{/each}}
+  {{else}}
+  <p>No blog entries found.</p>
+  {{/if}}

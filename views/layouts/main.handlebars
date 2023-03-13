@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://kit.fontawesome.com/f46accb316.css" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="css/styles.css">
   <title>MVC Blog</title>
 </head>
 
@@ -13,11 +14,45 @@
   <header class="display-flex justify-space-between align-center p-2 has-text-centered has-text-white has-background-info-dark">
     <h1 class="is-size-3">MVC Blog</h1>
     <h2 class="is-size-4">A tech blog that utilizes the MVC framework</h2>
-    {{#if loggedIn}}
     <nav>
-      <button class="btn" id="logout">Logout</button>
+      <a class="navbar-item" href="/">
+        Home
+      </a>
+      <a class="navbar-item" href="dashboard">
+        Dashboard
+      </a>
+      <a id="login" class="navbar-item" href="login">
+        Login
+      </a>
+      {{#if loggedIn}}
+      <a id="logout" class="navbar-item" href="logout">
+        Logout
+      </a>
+      {{/if}}
     </nav>
-    {{/if}}
+    {{!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/">
+            Home
+          </a>
+          <a class="navbar-item" href="dashboard">
+            Dashboard
+          </a>
+          <a id="login" class="navbar-item" href="login">
+            Login
+          </a>
+          {{#if loggedIn}}
+          <a id="logout" class="navbar-item" href="logout">
+            Logout
+          </a>
+          {{/if}}
+        </div>
+        <div class="navbar-end">
+        </div>
+      </div>
+    </nav> --}}
+    
   </header>
 
   <main class="container container-fluid mt-5">

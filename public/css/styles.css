@@ -1,0 +1,23 @@
+.navbar-item {
+    display: inline-block;
+    font-weight: bold;
+    color: #ffe08a;
+}
+
+.post-container {
+    border: 3px solid black;
+    margin: 10px;
+}
+
+.post-container span {
+    float: right;
+}
+
+.post-header {
+    padding-bottom: 5px;
+    border-bottom: 2px solid black;
+}
+
+.post-header, .post-body {
+    padding: 10px;
+}

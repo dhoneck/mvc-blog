@@ -1,12 +1,29 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
 
+const { User, Post } = require('../models');
 
-router.get('/', withAuth, (req, res) => {
-    console.log('HOME');
-    res.render('home', {
-        loggedIn: req.session.loggedIn
-    });
+
+router.get('/', async (req, res) => {
+    try {
+        const posts = await Post.findAll({
+            include: [
+              {
+                model: User,
+                attributes: ['username'],
+              },
+            ],
+            });
+        console.log('HOME');
+        console.log(posts);
+        res.render('home', {
+            loggedIn: req.session.loggedIn,
+            posts
+        });
+        
+    } catch (err) {
+        
+    }
 });
 
 router.get('/login', (req, res) => {

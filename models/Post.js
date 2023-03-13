@@ -30,6 +30,7 @@ Post.init(
       type: DataTypes.INTEGER,
       refrences: {
         model: User,
+        key: 'id'
       }
     }
   },
