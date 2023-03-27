@@ -1,10 +1,12 @@
-  <h2></h2>
+  <h2 class="is-size-4 has-text-centered">Home</h2>
   {{#if posts}}
   {{#each posts}}
-  <div class="post-container">
-    <div class="post-header">{{this.dataValues.title}} <span>Created on {{this.dataValues.date_created}}</span></div>
-    <div class="post-body">{{this.dataValues.content}}</div>
-  </div>
+    <a class="post-link" href="/view-post/{{this.dataValues.id}}">
+      <div class="post-container">
+        <div class="post-header">{{this.dataValues.title}} <span>Created on {{this.dataValues.date_created}}</span></div>
+        <div class="post-body">{{this.dataValues.content}}</div>
+      </div>
+    </a>
   {{/each}}
   {{else}}
   <p class="has-text-centered">No blog posts found.</p>

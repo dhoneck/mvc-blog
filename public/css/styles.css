@@ -4,9 +4,24 @@
     color: #ffe08a;
 }
 
+.navbar-item:hover {
+    color: #296fa8 !important;
+}
+
+.post-link {
+    color: black;
+}
+
 .post-container {
     border: 3px solid black;
     margin: 20px 20px 30px 20px;
+}
+
+.post-header {
+    padding-bottom: 5px;
+    border-bottom: 2px solid black;
+    font-weight: bold;
+    font-size: 1.3em;
 }
 
 .post-container span {
@@ -14,11 +29,29 @@
     font-size: .75em;
 }
 
-.post-header {
-    padding-bottom: 5px;
-    border-bottom: 2px solid black;
-}
-
 .post-header, .post-body {
     padding: 10px;
+}
+
+.article-view {
+    background-color: lightgray;
+    padding: 10px;
+    width: 90%;
+    margin: auto;
+    border-radius: 2px;
+}
+
+.article-title {
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 10px 10px 5px 10px;
+}
+
+article span {
+    font-size: .75em;
+    margin-bottom: 20px;
+}
+
+article p {
+    margin: 20px auto;
 }

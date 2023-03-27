@@ -3,7 +3,6 @@ const withAuth = require('../utils/auth');
 
 const { User, Post } = require('../models');
 
-
 router.get('/', async (req, res) => {
     try {
         const posts = await Post.findAll({
@@ -35,5 +34,20 @@ router.get('/login', (req, res) => {
 
     res.render('login');
 });
+
+router.get('/dashboard', withAuth, (req, res) => {
+    res.render('dashboard');
+})
+
+router.get('/view-post/:id', async (req, res) => {
+    const post = await Post.findByPk(req.params.id,{
+        include: {
+            model: Comment,
+          },
+        });
+    console.log(post);
+    res.render('view-post', { post });
+})
+
 
 module.exports = router;
