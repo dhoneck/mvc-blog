@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
 
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
@@ -19,9 +19,9 @@ router.get('/', async (req, res) => {
             loggedIn: req.session.loggedIn,
             posts
         });
-        
+
     } catch (err) {
-        
+
     }
 });
 
@@ -36,7 +36,9 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/dashboard', withAuth, (req, res) => {
-    res.render('dashboard');
+    res.render('dashboard', {
+        loggedIn: req.session.loggedIn,
+    });
 })
 
 router.get('/view-post/:id', async (req, res) => {
