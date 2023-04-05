@@ -1,11 +1,13 @@
-<h2 class="is-size-4 has-text-centered">View Post</h2>
-{{#if post}}
-<article class="article-view has-text-centered mt-3">
-    <h3 class="article-title">{{post.dataValues.title}}</h3>
-    <span>Created by {{post.dataValues.user_id}} on {{post.dataValues.date_created}}</span>
-    <p>{{post.dataValues.content}}</p>
-</article>
-<button class="mt-3">Add comment</button>
-{{else}}
-<p class="has-text-centered mt-3">No article found.</p>
-{{/if}}
+    <h2 class="is-size-4 has-text-centered">View Post</h2>
+    {{#if post}}
+    <article class="article-view has-text-centered mt-3">
+      <h3 class="article-title">{{post.title}}</h3>
+      <span>Created by {{post.user.username}} on {{post.date_created}}</span>
+      <p>{{post.content}}</p>
+    </article>
+    <section id="comment-container" class="has-text-centered mt-3">
+        <button class="mt-3">Add comment</button>
+    </section>
+    {{else}}
+    <p class="has-text-centered mt-3">No article found.</p>
+    {{/if}}

@@ -15,20 +15,12 @@
     <h1 class="is-size-3">MVC Blog</h1>
     <h2 class="is-size-4">A tech blog that utilizes the MVC framework</h2>
     <nav>
-      <a class="navbar-item" href="/">
-        Home
-      </a>
-      <a class="navbar-item" href="dashboard">
-        Dashboard
-      </a>
+      <a class="navbar-item" href="/">Home</a>
+      <a class="navbar-item" href="dashboard">Dashboard</a>
       {{#if loggedIn}}
-      <a id="logout" class="navbar-item">
-        Logout
-      </a>
+      <a id="logout" class="navbar-item">Logout</a>
       {{else}}
-      <a id="login" class="navbar-item" href="login">
-        Login
-      </a>
+      <a id="login" class="navbar-item" href="login">Login</a>
       {{/if}}
     </nav>
   </header>
@@ -37,7 +29,7 @@
     {{{ body }}}
   </main>
 
-  <footer>   
+  <footer>
   </footer>
 
   {{#if loggedIn}}

@@ -24,7 +24,7 @@ Post.init(
     date_created: {
       type: DataTypes.DATEONLY,
       allowNull: false,
-      // defaultValue: sequelize.NOW
+      defaultValue: sequelize.NOW
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -36,7 +36,7 @@ Post.init(
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: false, // TODO: Keep or remove?
     freezeTableName: true,
     underscored: true,
     modelName: 'post',
