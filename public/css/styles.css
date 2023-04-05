@@ -55,3 +55,8 @@ article span {
 article p {
     margin: 20px auto;
 }
+
+#comment-container {
+    width: 90%;
+    margin: auto;
+}

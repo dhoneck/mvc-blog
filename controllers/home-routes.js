@@ -61,19 +61,28 @@ router.get('/view-post/:id', async (req, res) => {
         attributes: ['username'],
       },
       {
-      model: Comment
+        model: Comment,
+        include: [
+          {
+            model: User,
+            attributes: ['username'],
+          },
+        ],
       },
-    ]
+    ],
   });
 
   // Convert post to plain data
-  const post = postData.get({ plain: true });
+  let post = postData.get({ plain: true });
 
   console.log('View Post Page');
   console.log('Post');
   console.log(post);
 
-  res.render('view-post', { post });
+  res.render('view-post', {
+    loggedIn: req.session.loggedIn,
+    post
+  });
 })
 
 module.exports = router;

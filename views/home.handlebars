@@ -1,13 +1,13 @@
-    <h2 class="is-size-4 has-text-centered">Home</h2>
-    {{#if posts}}
-    {{#each posts}}
+<h2 class="is-size-4 has-text-centered">Home</h2>
+{{#if posts}}
+  {{#each posts}}
     <a class="post-link" href="/view-post/{{id}}">
       <div class="post-container">
         <div class="post-header">{{title}} <span>Created on {{date_created}} by {{user.username}}</span></div>
         <div class="post-body">{{shortenText content}}</div>
       </div>
     </a>
-    {{/each}}
-    {{else}}
-    <p class="has-text-centered">No blog posts found.</p>
-    {{/if}}
+  {{/each}}
+{{else}}
+  <p class="has-text-centered">No blog posts found.</p>
+{{/if}}

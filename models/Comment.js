@@ -19,11 +19,11 @@ Comment.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    date_created: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-      defaultValue: sequelize.NOW
-    },
+    // date_created: {
+    //   type: DataTypes.DATE,
+    //   allowNull: false,
+    //   defaultValue: sequelize.NOW
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       refrences: {
@@ -41,7 +41,7 @@ Comment.init(
   },
   {
     sequelize,
-    timestamps: false, // TODO: Keep or remove?
+    // timestamps: false, // TODO: Keep or remove?
     freezeTableName: true,
     underscored: true,
     modelName: 'comment',

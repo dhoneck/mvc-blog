@@ -1,86 +1,85 @@
-  <!-- Login form -->
-  <div class="columns is-justify-content-center">
-    <div class="login-card column is-half">
-      <h2 class="page-title">Login</h2>
-      <form class="form login-form">
-        
-        <div class="field">
-          <p class="control has-icons-left">
-            <input id="username-login" class="input" type="text" placeholder="Username" required>
-            <span class="icon is-small is-left">
+<!-- Login form -->
+<div class="columns is-justify-content-center">
+  <div class="login-card column is-half">
+    <h2 class="page-title">Login</h2>
+    <form class="form login-form">
+
+      <div class="field">
+        <p class="control has-icons-left">
+          <input id="username-login" class="input" type="text" placeholder="Username" required>
+          <span class="icon is-small is-left">
               <i class="fas fa-user"></i>
             </span>
-          </p>
-        </div>
-        
-        <div class="field">
-          <p class="control has-icons-left">
-            <input id="password-login" class="input" type="password" placeholder="Password" required>
-            <span class="icon is-small is-left">
+        </p>
+      </div>
+
+      <div class="field">
+        <p class="control has-icons-left">
+          <input id="password-login" class="input" type="password" placeholder="Password" required>
+          <span class="icon is-small is-left">
               <i class="fas fa-lock"></i>
             </span>
-          </p>
-        </div>
-        
-        <div class="field">
-          <p class="control has-text-centered">
-            <button class="button has-text-white has-background-info has-text-weight-medium mb-4">
-              Login
-            </button>
-          </p>
-          <div style="width: 100%; height: 20px; border-bottom: 1px solid black; text-align: center">
-            <span style="font-size: 30px; background-color: white; padding: 0 10px;">OR</span>
-          </div>
-          <p class="control has-text-centered">
-            <button id="show-signup-modal" class="button has-background-warning has-text-weight-medium mt-6 js-modal-trigger" data-target="modal-js-example">
-              Create new account
-            </button>
-          </p>
-        </div>
-      </form>
-    </div> 
-  </div>
+        </p>
+      </div>
 
-  <!-- Signup Modal -->
-  <div id="signup-modal" class="modal">
-    <div class="modal-background" id="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Create new account</p>
-      </header>
-      
-      <section class="modal-card-body">
-        <!-- Signup form -->
-        <div class="login-card">
-          <form class="form signup-form">
-            <div class="field">
-              <p class="control has-icons-left">
-                <input id="username-signup" class="input" type="text" placeholder="Username" required>
-                <span class="icon is-small is-left">
+      <div class="field">
+        <p class="control has-text-centered">
+          <button class="button has-text-white has-background-info has-text-weight-medium mb-4">
+            Login
+          </button>
+        </p>
+        <div style="width: 100%; height: 20px; border-bottom: 1px solid black; text-align: center">
+          <span style="font-size: 30px; background-color: white; padding: 0 10px;">OR</span>
+        </div>
+        <p class="control has-text-centered">
+          <button id="show-signup-modal" class="button has-background-warning has-text-weight-medium mt-6 js-modal-trigger" data-target="modal-js-example">
+            Create new account
+          </button>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Signup Modal -->
+<div id="signup-modal" class="modal">
+  <div class="modal-background" id="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Create new account</p>
+    </header>
+
+    <section class="modal-card-body">
+      <!-- Signup form -->
+      <div class="login-card">
+        <form class="form signup-form">
+          <div class="field">
+            <p class="control has-icons-left">
+              <input id="username-signup" class="input" type="text" placeholder="Username" required>
+              <span class="icon is-small is-left">
                   <i class="fas fa-user"></i>
                 </span>
-              </p>
-            </div>
-            
-            <div class="field">
-              <p class="control has-icons-left">
-                <input id="password-signup" class="input" type="password" placeholder="Password" required>
-                <span class="icon is-small is-left">
+            </p>
+          </div>
+
+          <div class="field">
+            <p class="control has-icons-left">
+              <input id="password-signup" class="input" type="password" placeholder="Password" required>
+              <span class="icon is-small is-left">
                   <i class="fas fa-lock"></i>
                 </span>
-              </p>
-            </div>
-          </form>
-        </div>
-      </section>
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
 
-      <footer class="modal-card-foot">
-        <button id="create-user" class="button is-success button has-background-info">Create</button>
-        <button class="button" id="close-favorites">Cancel</button>
-      </footer>
-    </div>
+    <footer class="modal-card-foot">
+      <button id="create-user" class="button is-success button has-background-info">Create</button>
+      <button class="button" id="close-favorites">Cancel</button>
+    </footer>
   </div>
+</div>
 
-
-  <script src="https://kit.fontawesome.com/f46accb316.js" crossorigin="anonymous"></script>
-  <script src="./js/login.js"></script>
+<script src="https://kit.fontawesome.com/f46accb316.js" crossorigin="anonymous"></script>
+<script src="./js/login.js"></script>

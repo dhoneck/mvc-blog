@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 // CREATE new user
-// eslint-disable-next-line no-use-before-define
 router.post('/', async (req, res) => {
   try {
     const dbUserData = await User.create({
@@ -10,8 +9,11 @@ router.post('/', async (req, res) => {
       password: req.body.password,
     });
 
+    const userId = dbUserData.get({ plain: true }).id;
+
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.userId = userId;
 
       res.status(200).json(dbUserData);
     });
@@ -46,8 +48,10 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+    const userId = dbUserData.get({ plain: true }).id;
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.userId = userId;
 
       res
         .status(200)

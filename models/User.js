@@ -36,7 +36,7 @@ User.init(
       },
     },
     sequelize,
-    timestamps: false, // TODO: Keep or remove?
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'user',
