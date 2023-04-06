@@ -19,6 +19,6 @@ addCommentBtn.addEventListener('click', async () => {
   // Clear comment input
   commentText.value = '';
 
-  // Refresh Page
+  // Refresh page
   location.reload();
 });

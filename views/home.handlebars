@@ -3,7 +3,7 @@
   {{#each posts}}
     <a class="post-link" href="/view-post/{{id}}">
       <div class="post-container">
-        <div class="post-header">{{title}} <span>Created on {{date_created}} by {{user.username}}</span></div>
+        <div class="post-header">{{title}} <span>Created on {{createdAt}} by {{user.username}}</span></div>
         <div class="post-body">{{shortenText content}}</div>
       </div>
     </a>

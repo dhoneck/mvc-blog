@@ -45,11 +45,27 @@ router.get('/login', (req, res) => {
 });
 
 // Dashboard page - show all posts by user
-router.get('/dashboard', withAuth, (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
   // TODO: Add dashboard functionality
-  res.render('dashboard', {
-    loggedIn: req.session.loggedIn,
-  });
+  try {
+    const postData = await Post.findAll({
+      where: {
+        user_id: req.session.userId
+      },
+    });
+
+    // Convert posts to plain data
+    const posts = postData.map((post) =>
+      post.get({ plain: true })
+    );
+
+    res.render('dashboard', {
+      loggedIn: req.session.loggedIn,
+      posts
+    });
+  } catch (err) {
+    console.log(err);
+  }
 })
 
 // View post page - show single post and comments
