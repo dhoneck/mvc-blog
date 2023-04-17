@@ -1,12 +1,21 @@
 <h2 class="is-size-4 has-text-centered">View Post</h2>
 {{#if post}}
   <article class="article-view has-text-centered mt-3">
-    <h3 class="article-title">{{post.title}}</h3>
+    <h3 id="article-title">{{post.title}}</h3>
     <span>Created by {{post.user.username}} on {{post.date_created}}</span>
-    <p>{{post.content}}</p>
+    <p id="article-content">{{post.content}}</p>
   </article>
 {{else}}
   <p class="has-text-centered mt-3">No article found.</p>
+{{/if}}
+
+{{# if isOwner}}
+<div class="field is-grouped is-justify-content-center my-3">
+    <div class="control">
+      <button id="update-post-btn" class="button">Update Post</button>
+      <button id="delete-post-btn" class="button">Delete Post</button>
+    </div>
+</div>
 {{/if}}
 
 <section id="comment-container" class="has-text-centered my-3">
@@ -45,4 +54,39 @@
   {{/if}}
 </section>
 
+<!-- Update Post Modal-->
+<div id="update-post-modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Update Post</p>
+      <button id="close-modal-btn" class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content ... -->
+      <div class="field">
+        <label class="label">Title</label>
+        <div class="control">
+          <input id="blog-title" class="input" type="text" placeholder="Add blog title here">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Content</label>
+        <div class="control">
+          <textarea id="blog-content" class="textarea" placeholder="Add blog content here"></textarea>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <button id="submit-changes-btn" class="button is-success has-background-info">Submit Changes</button>
+      <button id="cancel-post-btn" class="button">Cancel</button>
+    </footer>
+  </div>
+</div>
+
 <script src="/js/submit-comment.js"></script>
+{{#if isOwner}}
+<script src="/js/update-post.js"></script>
+<script src="/js/delete-post.js"></script>
+{{/if}}

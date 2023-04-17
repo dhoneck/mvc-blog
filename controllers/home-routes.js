@@ -95,8 +95,12 @@ router.get('/view-post/:id', async (req, res) => {
   console.log('Post');
   console.log(post);
 
+  // Stores boolean of whether user viewing the article is the owner
+  const isOwner = (post.user.username == req.session.username);
+
   res.render('view-post', {
     loggedIn: req.session.loggedIn,
+    isOwner: isOwner,
     post
   });
 })
