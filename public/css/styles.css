@@ -1,73 +1,88 @@
 .navbar-item {
-    display: inline-block;
-    font-weight: bold;
-    color: #ffe08a;
+  display: inline-block;
+  font-weight: bold;
+  color: #ffe08a;
 }
 
 .navbar-item:hover {
-    color: #296fa8 !important;
+  color: #296fa8 !important;
 }
 
 nav a {
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
 nav a:hover {
-    border: 3px solid #fff;
+  border: 3px solid #fff;
 }
 
 .active {
-    border: 3px solid #ffe08a;
+  border: 3px solid #ffe08a;
 }
 .post-link {
-    color: black;
+  color: black;
 }
 
 .post-container {
-    border: 3px solid black;
-    margin: 20px 20px 30px 20px;
+  border: 3px solid black;
+  margin: 20px 20px 30px 20px;
 }
 
 .post-header {
-    padding-bottom: 5px;
-    border-bottom: 2px solid black;
-    font-weight: bold;
-    font-size: 1.3em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 5px;
+  border-bottom: 2px solid black;
+  font-weight: bold;
+  font-size: 1.3em;
+  background-color: lightgray;
 }
 
 .post-container span {
-    float: right;
-    font-size: .75em;
+  font-size: .60em;
+  position: relative;
+  top: 5px;
 }
 
 .post-header, .post-body {
-    padding: 10px;
+  padding: 10px;
 }
 
 .article-view {
-    background-color: lightgray;
-    padding: 10px;
-    width: 90%;
-    margin: auto;
-    border-radius: 2px;
+  background-color: lightgray;
+  padding: 10px;
+  width: 90%;
+  margin: auto;
+  border-radius: 2px;
 }
 
 .article-title {
-    font-size: 1.25em;
-    font-weight: bold;
-    padding: 10px 10px 5px 10px;
+  font-size: 1.25em;
+  font-weight: bold;
+  padding: 10px 10px 5px 10px;
 }
 
 article span {
-    font-size: .75em;
-    margin-bottom: 20px;
+  font-size: .75em;
+  margin-bottom: 20px;
 }
 
 article p {
-    margin: 20px auto;
+  margin: 20px auto;
 }
 
 #comment-container {
-    width: 90%;
-    margin: auto;
+  width: 90%;
+  margin: auto;
+}
+
+.comment-info {
+  font-size: .75em;
+}
+
+@media (max-width: 600px) {
+  .post-header {
+    font-size: 1em;
+  }
 }

@@ -13,6 +13,9 @@ router.get('/', async (req, res) => {
           attributes: ['username'],
         },
       ],
+      order: [
+        ['created_at', 'DESC'],
+      ],
     });
 
     // Convert posts to plain data
@@ -52,6 +55,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
       where: {
         user_id: req.session.userId
       },
+      order: [
+        ['created_at', 'DESC'],
+      ],
     });
 
     // Convert posts to plain data
@@ -85,6 +91,9 @@ router.get('/view-post/:id', async (req, res) => {
           },
         ],
       },
+    ],
+    order: [
+      [Comment, 'created_at', 'DESC'],
     ],
   });
 

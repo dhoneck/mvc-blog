@@ -2,7 +2,7 @@
 {{#if post}}
   <article class="article-view has-text-centered mt-3">
     <h3 id="article-title">{{post.title}}</h3>
-    <span>Created by {{post.user.username}} on {{post.date_created}}</span>
+    <span>Created by {{post.user.username}} on {{formatDate post.createdAt}}</span>
     <p id="article-content">{{post.content}}</p>
   </article>
 {{else}}
@@ -39,14 +39,11 @@
 
   <h3 class="is-size-4">Comments</h3>
   {{#if post.comments}}
-
     {{#each post.comments}}
-      <div class="comment my-4">
-      {{comment}}
+      <div class="comment my-5">
+        "{{comment}}"
         <br>
-      {{createdAt}}
-        <br>
-      {{user.username}}
+        <span class="comment-info">{{user.username}} on {{formatDate createdAt}}</span>
       </div>
     {{/each}}
   {{else}}

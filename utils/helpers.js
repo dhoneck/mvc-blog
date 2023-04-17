@@ -7,5 +7,12 @@ module.exports = {
     } else {
       return post;
     }
+  },
+  formatDate: (date) => {
+    let formattedDateTime = date.toLocaleDateString(
+      'en-us',
+      { month:'short', day:'numeric', year:'numeric', hour:'numeric', minute:'numeric' }
+    );
+    return formattedDateTime;
   }
 };
