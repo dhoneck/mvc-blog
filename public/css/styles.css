@@ -8,6 +8,17 @@
     color: #296fa8 !important;
 }
 
+nav a {
+    border-radius: 5px;
+}
+
+nav a:hover {
+    border: 3px solid #fff;
+}
+
+.active {
+    border: 3px solid #ffe08a;
+}
 .post-link {
     color: black;
 }
