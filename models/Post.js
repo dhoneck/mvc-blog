@@ -31,7 +31,6 @@ Post.init(
   },
   {
     sequelize,
-    // timestamps: false, // TODO: Keep or remove?
     freezeTableName: true,
     underscored: true,
     modelName: 'post',

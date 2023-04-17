@@ -9,11 +9,13 @@ router.post('/', async (req, res) => {
       password: req.body.password,
     });
 
+    const username = dbUserData.get({ plain: true }).username
     const userId = dbUserData.get({ plain: true }).id;
 
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.userId = userId;
+      req.session.username = username;
 
       res.status(200).json(dbUserData);
     });

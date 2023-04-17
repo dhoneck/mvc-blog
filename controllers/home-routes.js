@@ -49,7 +49,6 @@ router.get('/login', (req, res) => {
 
 // Dashboard page - show all posts by user
 router.get('/dashboard', withAuth, async (req, res) => {
-  // TODO: Add dashboard functionality
   try {
     const postData = await Post.findAll({
       where: {
@@ -105,6 +104,9 @@ router.get('/view-post/:id', async (req, res) => {
   console.log(post);
 
   // Stores boolean of whether user viewing the article is the owner
+  console.log('post.user.username: ' + post.user.username)
+  console.log('req.session.username:' + req.session.username);
+
   const isOwner = (post.user.username == req.session.username);
 
   res.render('view-post', {

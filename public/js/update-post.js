@@ -55,6 +55,6 @@ submitChangesBtn.addEventListener('click', async () => {
   // Close modal
   modalContainer.classList.remove('is-active');
 
-  // Refresh page
-    location.reload();
+  // Redirect to dashboard
+  location.href = '/dashboard';
 });
