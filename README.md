@@ -1,7 +1,7 @@
 # MVC Blog
 
 ## Description
-This is a simple blog application that holds users, posts, and comments in a MySQL database. Handlebars and the MVC framework are used to dynamically create the webpages. A guest may view all of the posts and comments but only registered users are allowed to create posts and comments. Registered users are also able to update and delete their posts. The deployed app can be found [here]().  
+This is a simple blog application that holds users, posts, and comments in a MySQL database. Handlebars and the MVC framework are used to dynamically create the webpages. A guest may view all of the posts and comments but only registered users are allowed to create posts and comments. Registered users are also able to update and delete their posts. The deployed app can be found [here](https://dh-mvc-blog.herokuapp.com/).  
 
 ## Table of Contents
 1. [Installation](#installation)
